@@ -1,0 +1,450 @@
+<?php
+if (!isset($_SESSION['id'])) {
+    header("Location: login.php");
+    exit;
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<!-- index.html  21 Nov 2019 03:44:50 GMT -->
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Welcome To Student Page</title>
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="assets/css/app.min.css">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <!-- Custom style CSS -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel='shortcut icon' type='image/x-icon' href='../images/logo.jpg' />
+</head>
+
+<body>
+  <div class="loader"></div>
+  <div id="app">
+    <div class="main-wrapper main-wrapper-1">
+      <div class="navbar-bg"></div>
+      <nav class="navbar navbar-expand-lg main-navbar sticky">
+        <div class="form-inline mr-auto">
+          <ul class="navbar-nav mr-3">
+            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg
+									collapse-btn"> <i data-feather="align-justify"></i></a></li>
+            <li><a href="#" class="nav-link nav-link-lg fullscreen-btn">
+                <i data-feather="maximize"></i>
+              </a></li>
+            <li>
+              <form class="form-inline mr-auto">
+                <div class="search-element">
+                  <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="200">
+                  <button class="btn" type="submit">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </form>
+            </li>
+          </ul>
+        </div>
+        <ul class="navbar-nav navbar-right">
+          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
+              class="nav-link nav-link-lg message-toggle"><i data-feather="mail"></i>
+              <span class="badge headerBadge1">
+                6 </span> </a>
+            <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
+              <div class="dropdown-header">
+                Messages
+                <div class="float-right">
+                  <a href="#">Mark All As Read</a>
+                </div>
+              </div>
+              <div class="dropdown-list-content dropdown-list-message">
+                <a href="email-inbox.html" class="dropdown-item"> <span class="dropdown-item-avatar
+											text-white"> <img alt="image" src="assets/img/users/user-1.png" class="rounded-circle">
+                  </span> <span class="dropdown-item-desc"> <span class="message-user">John
+                      Deo</span>
+                    <span class="time messege-text">Please check your mail !!</span>
+                    <span class="time">2 Min Ago</span>
+                  </span>
+                </a> <a href="email-inbox.html" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
+                    <img alt="image" src="assets/img/users/user-2.png" class="rounded-circle">
+                  </span> <span class="dropdown-item-desc"> <span class="message-user">Sarah
+                      Smith</span> <span class="time messege-text">Request for leave
+                      application</span>
+                    <span class="time">5 Min Ago</span>
+                  </span>
+                </a> <a href="email-inbox.html" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
+                    <img alt="image" src="assets/img/users/user-5.png" class="rounded-circle">
+                  </span> <span class="dropdown-item-desc"> <span class="message-user">Jacob
+                      Ryan</span> <span class="time messege-text">Your payment invoice is
+                      generated.</span> <span class="time">12 Min Ago</span>
+                  </span>
+                </a> <a href="email-inbox.html" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
+                    <img alt="image" src="assets/img/users/user-4.png" class="rounded-circle">
+                  </span> <span class="dropdown-item-desc"> <span class="message-user">Lina
+                      Smith</span> <span class="time messege-text">hii John, I have upload
+                      doc
+                      related to task.</span> <span class="time">30
+                      Min Ago</span>
+                  </span>
+                </a> <a href="email-inbox.html" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
+                    <img alt="image" src="assets/img/users/user-3.png" class="rounded-circle">
+                  </span> <span class="dropdown-item-desc"> <span class="message-user">Jalpa
+                      Joshi</span> <span class="time messege-text">Please do as specify.
+                      Let me
+                      know if you have any query.</span> <span class="time">1
+                      Days Ago</span>
+                  </span>
+                </a> <a href="email-inbox.html" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
+                    <img alt="image" src="assets/img/users/user-2.png" class="rounded-circle">
+                  </span> <span class="dropdown-item-desc"> <span class="message-user">Sarah
+                      Smith</span> <span class="time messege-text">Client Requirements</span>
+                    <span class="time">2 Days Ago</span>
+                  </span>
+                </a>
+              </div>
+              <div class="dropdown-footer text-center">
+                <a href="email-inbox.html">View All <i class="fas fa-chevron-right"></i></a>
+              </div>
+            </div>
+          </li>
+          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
+              class="nav-link notification-toggle nav-link-lg"><i data-feather="bell" class="bell"></i>
+            </a>
+            <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
+              <div class="dropdown-header">
+                Notifications
+                <div class="float-right">
+                  <a href="#">Mark All As Read</a>
+                </div>
+              </div>
+              <div class="dropdown-list-content dropdown-list-icons">
+                <a href="#" class="dropdown-item dropdown-item-unread"> <span
+                    class="dropdown-item-icon bg-primary text-white"> <i class="fas
+												fa-code"></i>
+                  </span> <span class="dropdown-item-desc"> Template update is
+                    available now! <span class="time">2 Min
+                      Ago</span>
+                  </span>
+                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-icon bg-info text-white"> <i class="far
+												fa-user"></i>
+                  </span> <span class="dropdown-item-desc"> <b>You</b> and <b>Dedik
+                      Sugiharto</b> are now friends <span class="time">10 Hours
+                      Ago</span>
+                  </span>
+                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-icon bg-success text-white"> <i
+                      class="fas
+												fa-check"></i>
+                  </span> <span class="dropdown-item-desc"> <b>Kusnaedi</b> has
+                    moved task <b>Fix bug header</b> to <b>Done</b> <span class="time">12
+                      Hours
+                      Ago</span>
+                  </span>
+                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-icon bg-danger text-white"> <i
+                      class="fas fa-exclamation-triangle"></i>
+                  </span> <span class="dropdown-item-desc"> Low disk space. Let's
+                    clean it! <span class="time">17 Hours Ago</span>
+                  </span>
+                </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-icon bg-info text-white"> <i class="fas
+												fa-bell"></i>
+                  </span> <span class="dropdown-item-desc"> Welcome to Student
+                    Page <span class="time">Yesterday</span>
+                  </span>
+                </a>
+              </div>
+              <div class="dropdown-footer text-center">
+                <a href="#">View All <i class="fas fa-chevron-right"></i></a>
+              </div>
+            </div>
+          </li>
+          <li class="dropdown"><a href="#" data-toggle="dropdown"
+              class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image" src="../images/jabbar.jpg"
+                class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span></a>
+            <div class="dropdown-menu dropdown-menu-right pullDown">
+              <div class="dropdown-title">Hello Abdul Jabbar</div>
+              <a href="profile.html" class="dropdown-item has-icon"> <i class="far
+										fa-user"></i> Profile
+              </a> <a href="timeline.html" class="dropdown-item has-icon"> <i class="fas fa-bolt"></i>
+                Activities
+              </a> <a href="#" class="dropdown-item has-icon"> <i class="fas fa-cog"></i>
+                Settings
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="../index.html" class="dropdown-item has-icon text-danger"> <i class="fas fa-sign-out-alt"></i>
+                Logout
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <div class="main-sidebar sidebar-style-2">
+        <aside id="sidebar-wrapper">
+          <div class="sidebar-brand">
+            <a href="https://quest.edu.pk"> <img alt="image" src="../images/logo.jpg" class="header-logo" /> <span
+                class="logo-name">QUEST</span>
+            </a>
+          </div>
+          <ul class="sidebar-menu">
+            <li class="menu-header">Main</li>
+            <li class="dropdown active">
+              <a href="index.html" class="nav-link"><i data-feather="monitor"></i><span>Home Page</span></a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Apply</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="alert.html">Instructions</a></li>
+                 <li><a class="nav-link" href="form-wizard.html">Personal Information</a></li>
+                 <li><a class="nav-link" href="editable-table.html">Educational Information</a></li>
+                <li><a class="nav-link" href="forms-advanced-form.html">Download challan</a></li>
+                <li><a class="nav-link" href="forms-editor.php">Exam Silp</a></li>
+                
+              </ul>
+            </li>
+             <li class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="layout"></i><span>Test</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="basic-form.html">Start Test</a></li>
+                <li><a class="nav-link" href="basic-table.php">See Result</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="layout"></i><span>Choose Department</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="breadcrumb.html">Chose department</a></li>
+              </ul>
+            </li>
+             <li class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="layout"></i><span>Identity Card</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="datatables.php">Identity Card</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="chat.html"><i data-feather="layout"></i><span>Chat</span></a>
+            </li>
+             <li class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="mail"></i><span>Email</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="email-inbox.html">Inbox</a></li>
+                <li><a class="nav-link" href="email-compose.html">Compose</a></li>
+                <li><a class="nav-link" href="email-read.html">read</a></li>
+              </ul>
+            </li>
+          </ul>
+        </aside>
+      </div>
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section">
+          <div class="row">
+          <div class="col-12">
+                <div class="card">
+                  
+                    <div class="card-header btn-primary">
+                    <div class="alert alert-primary btn-primary">About Quest</div>
+                  </div>
+                 
+                  <div class="card-body">
+                    <div id="accordion">
+                      <div class="accordion">
+                        <div class="accordion-header" role="button" data-toggle="collapse" data-target="#panel-body-1"
+                          aria-expanded="true">
+                          <h4>Vice Chancellor's Message</h4>
+                        </div>
+                        <div class="accordion-body collapse show" id="panel-body-1" data-parent="#accordion">
+                          <img src="../images/chancellor.jpg"><b>Dr.Saleem Raza Samo</b>
+                          <p class="mb-0"> <span>
+It is my sheer bliss to assume the privileged position of Vice-Chancellor Quaid-e-Awam University of Engineering, Science and Technology (QUEST) Nawabshah, the platform where I started my career, and it is the institute from where I graduated in 1986. I am highly indebted to Allah the Almighty for his continued blessings on me. Additionally, I am always grateful to all my colleagues for supporting me in this crucial role.
+
+The QUEST is a recognized institute across the globe, and its graduates are contributing their endeavors successfully and positively towards developing the socio-economic development of academic institutes on both the national and international level.
+
+The Quaid-e-Awam University is Pakistan´s one of the leading public-sector universities which is committed to solving the diverse challenges we face today. Our University provides a platform to bring together promising minds to serve the world. For achieving this, we provide the right balance of faculty, services, technology, and cultures to encourage both learners and teachers to develop, explore and discover new ideas. Our dream is to make our university the country&acute;s best educational institution.
+
+The QUEST is expanding its global reach to provide more opportunities and exposures for collaboration. In this regard, the Several MOUs have been signed with some renowned universities of different countries such as the USA, Turkey, Malaysia, Thailand, China, Indonesia, and Germany. Our university is equipped with state-of-the-art equipment, library, and other facilities in order to achieve an academic excellence and meet international academic standards.
+
+In QUEST, all stakeholders, such as educators, administrators, students, and employees are working as a team with ownership attitude in the ongoing process of erecting their university&acute;s academic standards. I truly appreciate and accept my team members&acute; tremendous cooperation.
+
+We strive to take place in a free, peaceful, and a balanced environment. We believe that cultivating good ideals of morality, integrity, fairness, and respect for each other is indispensable for the studies. We also believe that young people should have a role in defining their destinies.
+
+We help them to explore their abilities, plan for their future, and make an immediate impact at their work. Pakistan&acute;s high youth population and their energy provides to us a wonderful opportunity to play a role in inspiring the country&acute;s youth to be passionate and courageous to provide vital services to society.
+
+
+To this end, I urge all our stakeholders to play their roles collectively in a strong academic standard of this university with their utmost dedication. Together, we will make it as one of the top universities in the world.
+
+
+Prof. Dr. Saleem Raza Samo
+Vice Chancellor </span></p>
+                        </div>
+                      </div>
+                      <div class="accordion">
+                        <div class="accordion-header" role="button" data-toggle="collapse" data-target="#panel-body-2">
+                          <h4>Mission Statement</h4>
+                         
+                        </div>
+                        <div class="accordion-body collapse" id="panel-body-2" data-parent="#accordion">
+                          <img src="../images/mission.jpg" style="height: 200px;">
+                          <p class="mb-0">
+ <h5>Vision:</h5>
+“To produce professional graduates to cater the socio-economic requirements of the national and international market for sustainable development. ”
+
+ <h5>Mission:</h5>
+“To provide quality and state-of-art Education to the students in the prescribed areas of Engineering, Science & Technology, in order to make them outstanding professionals and better human-beings; so that they become capable of contributing effectively and amicably towards sustainable development”</p>
+                        </div>
+                      </div>
+                      <div class="accordion">
+                        <div class="accordion-header" role="button" data-toggle="collapse" data-target="#panel-body-3">
+                          <h4>Vice Chancellors</h4>
+                        </div>
+                        <div class="accordion-body collapse" id="panel-body-3" data-parent="#accordion">
+                          <img src="../images/chancellor.jpg"><b> Prof. Dr. Saleem Raza Samo
+                            <br>
+Vice Chancellor
+From 08-04-2018 to-date</b><br>
+<img src="../images/bashir.jpg"><b> Prof. Dr. Bashir Ahmed Memon
+  <br>
+Acting Vice Chancellor
+From 01-03-2018 20-03-2018</b><br>
+<img src="../images/karim.jpg" style="height: 200px; width: 200px;"><b>Prof. Dr. Abdul Karim Baloch
+  <br>
+From 27-02-2014 to 26-02-2018</b><br>
+<img src="../images/alibux.jpg" style="height: 200px; width: 200px;"><b>Prof. Dr. Ali Bux Soomro
+  <br>
+From 25-02-2010 to 26-02-2014</b><br>
+<img src="../images/wahidbux.jpg"><b> 
+Prof. Dr. Wahid Bux Soomro<br>
+From 11-03-2008 to 24-02-2010</b><br>
+<img src="../images/ahmed.jpg"><b>Prof. Dr. Anwar Ahmed Jonejo<br>
+From 12-03-2000 to 10-03-2008</b><br>
+<img src="../images/vc_qazi.jpg"><b>Prof. Dr. Abdul Qavi Qazi<br>
+From 01-12-1996 to 11-03-2000</b><br>
+<img src="../images/ahmed.jpg"><b>Prof. Dr. Anwar Ahmed Jonejo<br>
+From 12-03-2000 to 10-03-2008</b><br>
+<img src="../images/vc_keerio.jpg"><b>Prof. Jan Muhammad Keerio<br>
+From 03-09-1996 to 30-11-1996
+</b><br><img src="../images/vc_memon.jpg"><b>  Prof. Dr. Abdul Rehman Memon<br>
+From 15-08-1996 to 02-09-1996
+</b><br>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </section>
+        <div class="settingSidebar">
+          <a href="javascript:void(0)" class="settingPanelToggle"> <i class="fa fa-spin fa-cog"></i>
+          </a>
+          <div class="settingSidebar-body ps-container ps-theme-default">
+            <div class=" fade show active">
+              <div class="setting-panel-header">Setting Panel
+              </div>
+              <div class="p-15 border-bottom">
+                <h6 class="font-medium m-b-10">Select Layout</h6>
+                <div class="selectgroup layout-color w-50">
+                  <label class="selectgroup-item">
+                    <input type="radio" name="value" value="1" class="selectgroup-input-radio select-layout" checked>
+                    <span class="selectgroup-button">Light</span>
+                  </label>
+                  <label class="selectgroup-item">
+                    <input type="radio" name="value" value="2" class="selectgroup-input-radio select-layout">
+                    <span class="selectgroup-button">Dark</span>
+                  </label>
+                </div>
+              </div>
+              <div class="p-15 border-bottom">
+                <h6 class="font-medium m-b-10">Sidebar Color</h6>
+                <div class="selectgroup selectgroup-pills sidebar-color">
+                  <label class="selectgroup-item">
+                    <input type="radio" name="icon-input" value="1" class="selectgroup-input select-sidebar">
+                    <span class="selectgroup-button selectgroup-button-icon" data-toggle="tooltip"
+                      data-original-title="Light Sidebar"><i class="fas fa-sun"></i></span>
+                  </label>
+                  <label class="selectgroup-item">
+                    <input type="radio" name="icon-input" value="2" class="selectgroup-input select-sidebar" checked>
+                    <span class="selectgroup-button selectgroup-button-icon" data-toggle="tooltip"
+                      data-original-title="Dark Sidebar"><i class="fas fa-moon"></i></span>
+                  </label>
+                </div>
+              </div>
+              <div class="p-15 border-bottom">
+                <h6 class="font-medium m-b-10">Color Theme</h6>
+                <div class="theme-setting-options">
+                  <ul class="choose-theme list-unstyled mb-0">
+                    <li title="white" class="active">
+                      <div class="white"></div>
+                    </li>
+                    <li title="cyan">
+                      <div class="cyan"></div>
+                    </li>
+                    <li title="black">
+                      <div class="black"></div>
+                    </li>
+                    <li title="purple">
+                      <div class="purple"></div>
+                    </li>
+                    <li title="orange">
+                      <div class="orange"></div>
+                    </li>
+                    <li title="green">
+                      <div class="green"></div>
+                    </li>
+                    <li title="red">
+                      <div class="red"></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="p-15 border-bottom">
+                <div class="theme-setting-options">
+                  <label class="m-b-0">
+                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
+                      id="mini_sidebar_setting">
+                    <span class="custom-switch-indicator"></span>
+                    <span class="control-label p-l-10">Mini Sidebar</span>
+                  </label>
+                </div>
+              </div>
+              <div class="p-15 border-bottom">
+                <div class="theme-setting-options">
+                  <label class="m-b-0">
+                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
+                      id="sticky_header_setting">
+                    <span class="custom-switch-indicator"></span>
+                    <span class="control-label p-l-10">Sticky Header</span>
+                  </label>
+                </div>
+              </div>
+              <div class="mt-4 mb-4 p-3 align-center rt-sidebar-last-ele">
+                <a href="#" class="btn btn-icon icon-left btn-primary btn-restore-theme">
+                  <i class="fas fa-undo"></i> Restore Default
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="main-footer">
+        <div class="footer-left">
+          <a href="https://www.quest.edu.pk">www.quest.edu.pk</a></a>
+        </div>
+        <div class="footer-right">
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!-- General JS Scripts -->
+  <script src="assets/js/app.min.js"></script>
+  <!-- JS Libraies -->
+  <script src="assets/bundles/apexcharts/apexcharts.min.js"></script>
+  <!-- Page Specific JS File -->
+  <script src="assets/js/page/index.js"></script>
+  <!-- Template JS File -->
+  <script src="assets/js/scripts.js"></script>
+  <!-- Custom JS File -->
+  <script src="assets/js/custom.js"></script>
+</body>
+
+
+<!-- index.html  21 Nov 2019 03:47:04 GMT -->
+</html>
